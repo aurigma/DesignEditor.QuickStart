@@ -1,0 +1,70 @@
+{
+    "en": {
+        "uploader": {
+            "text": "Drag and drop your files here",
+            "uploading": "Uploading...",
+            "cancel": "Cancel",
+            "errorTitle": "Upload Error",
+            "error": {
+                "types": "Unsupported file format.",
+                "upload": "Ooops! Something went wrong."
+            },
+            "errorButton": "Try Again"
+        },
+        "topToolbar": {
+            "uploadButton": "Upload file",
+            "fitToBleed": "Fit to Bleed",
+            "fitToTrim": "Fit to Trim",
+            "centerArtwork": "Center Artwork",
+            "keepAspectRatio": "Keep aspect ratio",
+            "reset": "Reset",
+            "download": "Download PDF"
+        },
+        "leftToolbar": {
+            "deletePage": {
+                "deleteTitle": "Confirm delete",
+                "deleteMessage": "Are you sure you want to delete this page?",
+                "deleteCancel": "Cancel",
+                "delete": "Delete"
+            }
+        },
+        "rightToolbar": {
+            "info": {
+                "bleed": "Bleed",
+                "productSize": "Product size",
+                "bleedAreaText": "This area will be trimmed. Make sure all background graphics cover this area.",
+                "productSizeText": "This is the final size your artwork will be trimmed to.",
+                "rules": {
+                    "important": "Important:",
+                    "text": "Your artwork must be in {{COLORSPACE}} color space and its resolution should be at least {{DPI}} dpi."
+                }
+            },
+            "report": {
+                "title": "Report",
+                "noErrors": "No errors",
+                "errors": "Errors",
+                "warnings": "Warnings",
+                "page": "Page",
+                "fix": "Fix",
+                "messages": {
+                    "wrongColorSpace": "Bad color space - {{COLORSPACE}}",
+                    "lowResolution": "Low resolution - {{DPI}} dpi",
+                    "notFillTrimbox": "The design does not fill the entire TrimBox",
+                    "notInsideBleedbox": "The design does not fit the BleedBox",
+                    "safetyboxes": "Required page boxes are not defined or do not match - {{BOXES}}",
+                    "spotcolors": "Used unallowed spot colors - {{SPOTCOLORS}}",
+                    "sameorientation": "The page has a different orientation than most pages",
+                    "forbiddenfonts": "These fonts are forbidden - {{FONTS}}",
+                    "allowedfonts": "These fonts are not allowed - {{FONTS}}",
+                    "fonttypes": "These font types are not allowed - {{FONTTYPES}}",
+                    "minfontsize": "These text size values are less than allowed - {{FONTSIZES}}",
+                    "textascurves": "Text is not converted to curves",
+                    "embeddedfonts": "These fonts are not embedded in document - {{FONTS}}"
+                }
+            }
+        },
+        "preloader": {
+            "wait": "Please, wait..."
+        }
+    }
+}

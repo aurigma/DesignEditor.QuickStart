@@ -1,0 +1,162 @@
+{
+  "language": "en",
+  "vars": {
+    "templateFront": "empty-canvas",
+    "rootFolder": "samples/"
+  },
+  "widgets": [
+    {
+      "name": "cc",
+      "type": "design-editor",
+      "params": {
+        "initial": {
+          "productDefinition": {
+            "surfaces": [
+              {
+                "name": "Canvas",
+                "printAreas": [
+                  {
+                    "designFile": "{{ vars.rootFolder + vars.templateFront }}"
+                  }
+                ]
+              }
+            ]
+          },
+          "editorConfig": {
+            "initialMode": "Advanced",
+            "defaultAssetSelectWidget": "AssetManager",
+            "assetSources": {
+              "My Files": {
+                "type": "PrivateSource",
+                "allowedExtensions": [
+                  "jpg",
+                  "png",
+                  "svg",
+                  "eps",
+                  "pdf",
+                  "ai"
+                ]
+              }
+            },
+            "widgets": {
+              "AssetManager": {
+                "tabs": [
+                  {
+                    "name": "My Files",
+                    "assetSourceInstance": "My Files",
+                    "controls": {
+                      "toolbarEnabled": false,
+                      "categoriesEnabled": true
+                    },
+                    "iconClassName": "cc-icon-uploadable"
+                  }
+                ]
+              },
+              "BottomToolbar": {
+                "rotateButtonEnabled": false
+              },
+              "ObjectInspector": {
+                "aboveCanvasOnSmallScreenEnabled": true,
+                "bgItemEnabled": false,
+                "position": "Right"
+              },
+              "FinishButton": {
+                "mode": "Disabled"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "approve-panel",
+      "type": "group",
+      "params": {
+        "type": "noncollapsible",
+        "tabs": [
+          {
+            "widgets": [
+              {
+                "name": "preview",
+                "type": "image-carousel",
+                "params": {
+                  "lightbox": true,
+                  "containerColor": "#ffffff",
+                  "showImageIndex": false,
+                  "imageSelectorPosition": "bottom",
+                  "images": [
+                    {
+                      "title": "Cover",
+                      "url": "{{ $['cc'].proofImageUrls[0][0]}}"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "widgets": [
+              {
+                "name": "finish-panel",
+                "type": "group",
+                "params": {
+                  "type": "noncollapsible",
+                  "tabs": [
+                    {
+                      "widgets": [
+                        {
+                          "name": "agree-checkbox",
+                          "type": "checkbox",
+                          "params": {
+                            "prompt": "I have reviewed and approve my design.",
+                            "value": false
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "order",
+      "type": "order",
+      "params": {
+        "images": "{{ [$['cc'].proofImageUrls[0][0]] }}",
+        "downloadUrls": "{{ $['cc'].hiResUrls }}",
+        "data": {
+          "snapshot": "{{ main.editorState }}",
+          "preview": "{{ $['cc'].proofImageUrls[0][0] }}"
+        }
+      }
+    },
+    {
+      "name": "finish-button",
+      "type": "finish-button",
+      "params": {
+        "enabled": "{{ $['agree-checkbox']._ }}"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "name": "Design",
+      "mainPanel": {
+        "name": "cc"
+      }
+    },
+    {
+      "name": "Preview",
+      "mainPanel": {
+        "name": "approve-panel"
+      },
+      "onActivate": [
+        "{{ #function $['cc'].getHiResImages(800,800)}}"
+      ]
+    }
+  ]
+}

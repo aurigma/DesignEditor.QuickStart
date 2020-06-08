@@ -1,0 +1,22 @@
+{
+    "en": {
+        "testText": "translations really works? Whoah!",
+        "duplicateAction": "Duplicate",
+        "renameAction": "Rename",
+        "deleteAction": "Delete",
+        "newPageAction": "New page",
+        "zoomInAction": "Zoom In",
+        "zoomOutAction": "Zoom Out",
+        "zoomToFitAction": "Zoom to Fit",
+        "zoomToSelectionAction": "Zoom to Selection",
+        "zoom50Action": "Zoom 50%",
+        "zoom100Action": "Zoom 100%",
+        "zoom200Action": "Zoom 200%",
+        "previewAction": "Preview",
+        "rulesAction": "Rules",
+        "gridAction": "Grid",
+        "snapAction": "Snap",
+        "pageAction": "Page",
+        "pageObjects": "Objects"
+    }
+}
