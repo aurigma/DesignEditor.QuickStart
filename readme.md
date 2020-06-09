@@ -76,13 +76,6 @@ When the installation of Node.js is complete, you can use **npm** to install the
 2. [Vue CLI environment](https://cli.vuejs.org/guide/) for project management
 
     `npm install -g @vue/cli`
-3. [Webpack](https://webpack.js.org/guides/installation/) representing a module bundler for JavaScript applications
-
-    `npm install webpack`
-4. [Axios](https://github.com/axios/axios) promise-based HTTP client for the browser
-
-    `npm install axios`
-
 
 # How to get started?
 
