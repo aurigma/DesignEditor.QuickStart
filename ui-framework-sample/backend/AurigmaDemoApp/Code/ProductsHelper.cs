@@ -8,17 +8,18 @@ namespace AurigmaDemoApp.Code
 {
     public static class ProductsHelper
     {
-        private static string ConfigsDirectory = @"App_Data\products";
-        public static IEnumerable<string> GetProductConfigsList()
+        private static string ConfigsDirectory = Path.Combine("App_Data", "products");
+        public static IEnumerable<string> GetProductConfigsList(string rootDir)
         {
-            var files = Directory.EnumerateFiles(ConfigsDirectory, "*.json")
-                .Select(x => x.Replace(ConfigsDirectory + "\\", "").Replace(".json", ""));
+            var path = Path.Combine(rootDir, ConfigsDirectory);
+            var files = Directory.EnumerateFiles(path, "*.json")
+                .Select(x => x.Replace(path, "").Substring(1).Replace(".json", ""));
             return files;
         }
 
-        public static async Task<string> GetProductConfig(string filename)
+        public static async Task<string> GetProductConfig(string rootDir, string filename)
         {
-            var path = Path.Combine(ConfigsDirectory, filename + ".json");
+            var path = Path.Combine(rootDir, ConfigsDirectory, filename + ".json");
             if (File.Exists(path))
             {
                 return await File.ReadAllTextAsync(path);

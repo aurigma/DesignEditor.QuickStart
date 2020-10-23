@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
   </PropertyGroup>
 
 
@@ -21,12 +22,7 @@
 
 
   <ItemGroup>
-    <None Update="App_Data\static\modules\default-driver.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="App_Data\static\modules\moduleLoader.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="App_Data\**" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
 </Project>

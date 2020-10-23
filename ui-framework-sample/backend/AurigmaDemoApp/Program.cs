@@ -19,7 +19,6 @@ namespace AurigmaDemoApp
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseWebRoot(@"App_Data\static");
+                .UseStartup<Startup>();
     }
 }
